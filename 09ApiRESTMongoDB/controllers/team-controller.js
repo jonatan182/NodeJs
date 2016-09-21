@@ -5,65 +5,51 @@ const TeamModel = require('../models/team-model'),
 
 class TeamController {
 	getAll(req, res, next) {
-		tm.getAll((err, data) => {
-			if (!err) {
-				res.render('index', {
-					title: 'Indentation War',
-					data: data
-				});
-			}
+		tm.getAll((docs) => {
+			res.render('index', {
+				title:'Indentation War',
+				data: docs
+			});
 		});
 	}
 
 	getOne(req, res, next) {
-		let id = req.params.id;
-		console.log(id);
+		let _id = req.params._id;
+		console.log(_id);
 
-		tm.getOne(id, (err, data) => {
-			if(!err) {
-				res.render('edit', {
-					title: 'Editar Contacto',
-					data: data
-				});
-			}
+		tm.getOne(_id, (docs) => {
+			console.log(docs);
+			
+			res.render('edit', {
+				title : 'Editar Contacto',
+				data : docs
+			});
 		});
 	}
 
 	save(req, res, next) {
 		let contacto = {
-			id: (req.body.id || 0),
+			_id: (req.body._id || null),
 			name: req.body.name,
 			twitter: req.body.twitter,
 			country: req.body.country,
 			side: req.body.side
 		};
-
+		
 		console.log(contacto);
 
-		tm.save(contacto, (err) => {
-			if(!err) {
-				res.redirect('/');
-			} else {
-				return next( new Error('Registro no salvado') );
-			}
-		});
+		tm.save( contacto, () => res.redirect('/') );
 	}
 
 	delete(req, res, next) {
-		let id = req.params.id;
-		console.log(id);
+		let _id = req.params._id;
+		console.log(_id);
 
-		tm.delete(id, (err, data) => {
-			if(!err) {
-				res.redirect('/');
-			} else {
-				return next(new Error('Registro no encontrado'));
-			}		
-		});
+		tm.delete( _id, () => res.redirect('/') );
 	}
 
 	addForm(req, res, next) {
-		res.render('add', { title:'Agregar Contacto' });
+		res.render('add', {title: 'Agregar Contacto'});
 	}
 
 	error404(req, res, next) {
