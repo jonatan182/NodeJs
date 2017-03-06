@@ -14,7 +14,7 @@ server.listen(port,hostname, () =>{
 });
 
 //Creacion Segundo Server que se ejecutara en el puerto port2
-const server2 = http.createServer(function(req,res){// Creamos El Servidor. Los Caracteres "=>" Se remplaza por function(req,res), y se coloca despues de los atributos de la funcion "
+const server2 = http.createServer((req,res)=>{// Creamos El Servidor. Los Caracteres "=>" Se remplaza por function(req,res), y se coloca despues de los atributos de la funcion "
   res.setHeader('Content-Type','text/html');
   res.end("Hello World\n"+ `http://${hostname}:${port2}`);
 });
