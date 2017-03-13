@@ -31,7 +31,7 @@ console.log(2 + 5);
 
 console.log(global);
 
-setInterval(() => {
+setInterval(() => {//es una funcion que se va a estar ejecutando cada determinado tiempo
 	console.log( 'Hola Node.js' + new Date() );
 }, 1000);
 

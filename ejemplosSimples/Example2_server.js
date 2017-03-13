@@ -14,7 +14,7 @@ servidor.listen(8881);//el servidor tiene un metodo llamado listen, endonde se l
 */
 //Ejemplo Mas Practico Creando La Funcion Directa Como Parametro
 http.createServer(function(request, response){//funcion que recibe como parametro una funcion, esta funcion se ejecuta cada ves que el navegador hace una peticion a nuestro servidor node
-  response.writeHead(200, {"Content-Type": "text/html"});//Para Dar Formato A lo que se enviara al navegador, decimos que el contenido sera de de tipoo text/html
+  response.writeHead(200, {"Content-Type": "text/html"});//Para Dar Formato A lo que se enviara al navegador, decimos que el contenido sera de de tipo text/html, y el Status es 200 'exitoso'
   response.write("Hola Mundo Server Node");//Mensaje Que Se Mostrara
   response.end();//Para Cerrar La Conexion
 }).listen(8888);//Puerto El Cual va A estar Escuchando

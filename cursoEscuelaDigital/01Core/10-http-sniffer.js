@@ -2,12 +2,12 @@
 
 const http = require('http'),
 	options = {
-		host : 'escuela.digital',
+		host : 'www.tutorialspoint.com',
 		port : 80,
-		path : '/cursos'
+		path : '/nodejs/'
 	};
 
-let htmlCode = '';
+let htmlCode = '';//Variable local
 
 function httpClient(res) {
 	console.log(`El sitio ${options.host} ha respondido. Código de Estado: ${res.statusCode}`);
