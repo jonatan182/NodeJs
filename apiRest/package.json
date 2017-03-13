@@ -1,0 +1,19 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Proyecto de API RESTful con Node.js y Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js", //Para llamar a nodemon para no tener que parar y arrancar el servidor cada vez que hagamos un cambio
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonatan Velandia",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0" //libreria que nos va a permitir que cada vez que hagamos un cambio NO tengamos que parar el servidor  y iniciarlo, Simplemente basta con guardarlo "crtl + s" y se subiran los cambios al servidor
+  }
+}
