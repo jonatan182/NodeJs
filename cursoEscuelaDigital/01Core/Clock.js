@@ -13,4 +13,4 @@ class Clock {
 	};
 }
 
-module.exports = Clock;
+module.exports = Clock;//Para exportar este modulo

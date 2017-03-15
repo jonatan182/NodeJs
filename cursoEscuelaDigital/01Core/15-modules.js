@@ -21,4 +21,4 @@ console.log(
 	myData._phone
 );
 
-cucu.theTime();
+//cucu.theTime();

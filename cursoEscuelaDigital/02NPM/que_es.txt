@@ -1,0 +1,34 @@
+NPM
+Es el gestor de paquetes de node js, y no solo de node js, si no que tambien de javascript
+
+npm init //Iniciar Un Proyecto Con sistente, es decir la consola empieza hacer una seria de preguntas como el nombre, verion, descripcion, el archivoPrincipal, repositorio git, autor, Licencia "MIT". Todo esto va a estar en un archivo que se creara con el nombre de package.json
+npm init -y //Iniciar Un Proyecto Sin asistente, NO crea el archivo package.json
+
+//Iniciar un proyecto significa hablar del archivo package.json.
+package.json es el archivo de configuracion de un proyecto de node.js
+
+
+Instalacion De Dependencias Unica
+
+//Se instalan en la carpeta donde se encuentre la terminal de comandos en la carpeta node-modules que se crea al ejecutar cualquiera de los siguientes comandos, NO se registran en el archivo package.json
+npm install [nombre del package o repositorio]
+npm install [nombre del packete]@3.4.12 //Versión especifica
+npm i [nombre del package] //shortcut manera corta
+
+Instalacion De Dependencia De Proyecto
+npm install [nombre del package] --save  //La diferencia es que expicificando el tag --save le estamos diciendo que esa libreria se va a guardar en nuestro archivo package.json ya que es una dependencia
+npm i -S [nombre del package] //shortcut
+
+
+Instalacion De Dependencia De Desarrollo
+npm install [nombre del package] --save-dev
+npm install [nombre del package] -D
+
+
+//La Diferencia entre la instalacion de dependencia de desarrollo y la de proyecto es que la dependencia de proyecto es si o si para funcionar en produccion, mi proyecto necesita esa libreria.
+  Y la dependendia de desarrollo yo desarrollador la necesito mientras estoy haciendo mi proyecto
+
+
+Instalacion Global
+npm install [nombre del package] --global
+npm install [nombre del package] -g //shortcut
