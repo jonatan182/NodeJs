@@ -1,0 +1,17 @@
+Express es un framework de nodejs
+
+Express nos va ayudar con el manejo de:
+rutas,
+parametros por la url,
+trabajar con formularios y subida de ficheros
+cookies
+sesiones
+templates: nos permite generar las vistas
+
+Express No nos sirve para:
+bases de datos/ORM
+Autenticacion de usuarios
+seguridad
+migraciones
+deployment
+organizacion de codigo
