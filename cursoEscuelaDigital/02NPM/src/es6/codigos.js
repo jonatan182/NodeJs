@@ -28,4 +28,3 @@
 
 	wow.init();
 })(document, window, jQuery, WOW);
-

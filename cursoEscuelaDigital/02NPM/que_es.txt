@@ -26,9 +26,46 @@ npm install [nombre del package] -D
 
 
 //La Diferencia entre la instalacion de dependencia de desarrollo y la de proyecto es que la dependencia de proyecto es si o si para funcionar en produccion, mi proyecto necesita esa libreria.
-  Y la dependendia de desarrollo yo desarrollador la necesito mientras estoy haciendo mi proyecto
+  Y la dependencia de desarrollo yo desarrollador la necesito mientras estoy haciendo mi proyecto
 
 
-Instalacion Global
+Instalacion Global, //se instala en una carpeta especifica de nuestro sistema operativo, va a estar accesible para cualquier carpeta
 npm install [nombre del package] --global
-npm install [nombre del package] -g //shortcut
+npm i -g [nombre del package] //shortcut
+
+//Instalación De Multiples Paquetes
+npm install -S [package1] [package2][package3] --flag   //se agregan como dependencias de proyecto "-S"
+npm i -S [package1] [package2][package3] --flag
+
+
+//Cuando Ejecutamos el comando "npm install" significa que en la carpeta en donde nosotros ejecutemos la instalación npm va a buscar un archivo package.json y va a instalar todas las
+//dependencias de proyecto "dependencies", y de desarrollo "devDependencies" que estan en el archivo package.json
+
+
+//Actualización De Paquetes
+npm update [package] //Se se actualiza de la carpeta node_modules
+npm update [package] --save
+npm update [package] --save-dev
+npm update [package] --global
+npm update [package] //shortcut
+
+//Desinstalación De Paquetes
+npm uninstall [package] //Se borra de la carpeta node_modules
+npm uninstall [package] --save  //Se desinstala el paquete especificado del paquete package.json del apartado de dependencias de proyecto "dependencias"
+npm uninstall [package] --save-dev //Se desinstala el paquete especificado del package.json del apartado de dependencias  de desarrollo "devDependencias"
+npm uninstall [package] --global  //Se desinstala el paquete especificado de la carpeta global
+npm un [package] //shortcut
+
+
+//Publicacion de paqueres
+npm publish  //un paquete no puede volver a re-publicarse con la misma version. EL codigo de vincula con git y luego el repositorio de npm lo jala de git
+
+//Scripts De Paquetes
+"scripts": {
+  "sass": "node-sass -o ./dist/ ./src/",
+  "stylus": "stylus -w ./src/stylus.styl -o ./dist/style.css",
+  "start": "http-server"   //si ejecutamos npm start se arranca el servidor http-server  "start": "node server.js" // Es apara arrancar el servidor express ya que este esta configurado en el archivo server.js
+}
+npm run sass
+npm run stylus
+npm start  "no necesita de especificar el metodo run"
