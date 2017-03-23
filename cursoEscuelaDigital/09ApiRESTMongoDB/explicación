@@ -1,0 +1,51 @@
+Mongo Db
+Que Es Mongo?
+es una base de datos nosql, significa que no tiene squema, es de alto rendimiento es mucho mas rapida que na db relacional
+Y almacena los documentos en formato BSON "Es un documento json en formato binario".
+Esta enfocada en escalabilidad horizontal es decir no se puede hacer un gran modelado y relaciones de datos.
+Las tablas que conocemos normalmente en las base de datos relacionales, en las bases de datos nosql se conocen como. "colecciones"
+Una coleccion es el conjunto de documentos NO hay Joins.
+
+No Impone una forma a los datos, es decir: "En las bd transaccionales como mysql tenemos que diseñarlas deacuerdo a la informacion que se van a ir guardando las
+tablas son muy similares a una hoja de excel. Es decir la informacion tiene que tener una misma estructura ej:
+tenemos la tabla usuario que tiene la columna nacionalidad,
+si hacemos una consulta no hay problea pues abra usuarios españoles, colombianos mexicanos, venezolanos etc. Pero que sucede
+SI hay un usuario que tiene mas de una nacionalidad pues ya un modelo sql convencional no funcioaria.
+Para ese caso en comun nos conviene realizar una Db NoSql ejemplo:
+docmumento bson, en sql se podria creando tablas pibotes seria tres tablas, una de usuarios, nacionalidades, nacionalidadesXUsuarios
+*******NoSql*******
+{
+  usuario:{
+    nombre: ""usuario"1",
+    nacionalidad: "Colombiano"
+  }
+  usuario:{
+    nombre: "usuario2",
+    nacionalidad: [
+            "Colombiano,
+            "Alemania",
+            "Español"
+    ]
+  }
+}
+*****SQL******
+Usuarios(IdUsuario, nombre, Idnacionalidad)
+Nacionalidades(idNacionalidad, Nacionalidad)
+NacionalidadXUsuarios(Id, Idusuario, IdNacionalidad)
+----------------------1,   1,          1
+----------------------2,   1,          2
+----------------------3,   1,          3
+
+//Se crearian varios registros, es decir un registro por la nacionalidad, asi que no es muy conveniente, lo Mejor es usar Nosql "db documentales"
+
+Mongo permite indices geoespaciales que es el almacenado de geolocalizacion,
+Busquedas fullText, similares a las transacciones sql
+almacenamientos en blobs y ficheros, es decir que se puede almacenar un documento pdf, o una imagen o cualquier archivo multimedia
+
+*****Que No Es Mongo********
+No puede hacer joins
+Mongo no es ideal para hacer operaciones con numeros sacar porcentajes, cualquier sistema que tenga que ver con dinero etc.
+No tiene transacciones
+SI nuestra aplicacion crece mucho y vamos a necesitar JOINS Pues Mongo NO Seria LO IDEAL
+El limite maximo de un documento en mongo es de 16MB.
+"

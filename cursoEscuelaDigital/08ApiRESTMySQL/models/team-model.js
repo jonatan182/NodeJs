@@ -3,7 +3,7 @@
 const conn = require('./model');
 
 class TeamModel {
-	getAll(cb) {
+	getAll(cb) {//Recibe una collback, es decir que cuando se procese tiene que ejecutarla
 		conn.query('SELECT * FROM team', cb);
 	}
 

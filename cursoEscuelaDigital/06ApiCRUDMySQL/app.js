@@ -7,30 +7,32 @@ const express = require('express'),
 	publicDir = express.static(`${__dirname}/public`),
 	viewDir = `${__dirname}/views`,
 	port = (process.env.PORT || 3000),
-	mysql = require('mysql'),
+	mysql = require('mysql'),//paquete que permite conectarme a mysql, es como el driver
 	myConnection  = require('express-myconnection'),
 	dbOptions = {
-		host : 'localhost',
+		host : '192.168.99.100',
 		user : 'root',
-		password : '',
+		password : 'rootpassword',
 		port : 3306,
 		database : 'indentation_war'
 	},
-	conn = myConnection(mysql, dbOptions, 'request');
+	conn = myConnection(mysql, dbOptions, 'request');//request cierra la conexion automaticamente
 
 let app = express();
 
+//set permite establecer parametros a express, get me permite obtenerlos y use que me permite usarlos
 app.set( 'views', viewDir );
 app.set( 'view engine', 'pug' );
 app.set( 'port', port );
 
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded({ extended: false }) );
-app.use( publicDir );
+app.use( bodyParser.json() );//para que me permita manipular el envio de informacion
+app.use( bodyParser.urlencoded({ extended: false }) );//"me permite que mis formularios puedan estar enviando variablesy entonces node las puede recibir atravez de su atributo name"
+app.use( publicDir );//establecemos cual va a ser el directorio publico
 app.use( favicon );
 
-app.use( conn );
+app.use( conn );//le decimos que use la coneccion a mysql
 
+//Indicamos las rutas o patch para desplegar mi aplicacion
 app.get('/', (req, res, next) => {
 	req.getConnection((err, conn) => {
 		conn.query('SELECT * FROM team', (error, data) => {
@@ -92,7 +94,7 @@ app.post('/actualizar/:id', (req, res, next) => {
 			country: req.body.country,
 			side: req.body.side
 		};
-		
+
 		conn.query('UPDATE team SET ? WHERE id = ?', [contacto, contacto.id],(err, data) => {
 			if(!err) {
 				res.redirect('/');

@@ -1,5 +1,5 @@
 'use strict';
-
+//se encarga de controlar el manejo de las peticiones
 const TeamController = require('../controllers/team-controller'),
 	express = require('express'),
 	router = express.Router(),

@@ -9,7 +9,7 @@ const mysql = require('mysql'),
 		port : conf.mysql.port,
 		database : conf.mysql.db
 	},
-	conn = mysql.createConnection(dbOptions);
+	conn = mysql.createConnection(dbOptions);//ahora creamos la conexion con el modulo de mysql
 
 conn.connect((err) => {
 	return (err)
