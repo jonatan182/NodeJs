@@ -4,6 +4,7 @@ es una base de datos nosql, significa que no tiene squema, es de alto rendimient
 Y almacena los documentos en formato BSON "Es un documento json en formato binario".
 Esta enfocada en escalabilidad horizontal es decir no se puede hacer un gran modelado y relaciones de datos.
 Las tablas que conocemos normalmente en las base de datos relacionales, en las bases de datos nosql se conocen como. "colecciones"
+Y los registros se conocen como documentos.
 Una coleccion es el conjunto de documentos NO hay Joins.
 
 No Impone una forma a los datos, es decir: "En las bd transaccionales como mysql tenemos que diseñarlas deacuerdo a la informacion que se van a ir guardando las
@@ -48,4 +49,8 @@ Mongo no es ideal para hacer operaciones con numeros sacar porcentajes, cualquie
 No tiene transacciones
 SI nuestra aplicacion crece mucho y vamos a necesitar JOINS Pues Mongo NO Seria LO IDEAL
 El limite maximo de un documento en mongo es de 16MB.
+
+ODM y ORM
+Odm "Mapedo Objeto Documento, es utilizado para DB NO Relacionales como mongoDb. ej: Mandango, Mongoose"
+ORM "Mapeo Objeto Relacional, es utilizado para DB Relacional Transaccionales como Mysql, sql, postgresql oracle etc; ej: hibermate, Top Link, OpenJpa Entity Framework"
 "

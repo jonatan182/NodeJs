@@ -1,5 +1,5 @@
 'use strict';
-
+//Creamos la Coleccion "Tabla" de nombre team
 const mongoose = require('./model'),
 	Schema = mongoose.Schema,
 	TeamSchema = new Schema({
@@ -10,8 +10,8 @@ const mongoose = require('./model'),
 		side : String
 	},
 	{
-		collection : 'team'
+		collection : 'team' //nombre de la coleccion "tabla para mysql"
 	}),
-	Team = mongoose.model('Team', TeamSchema);
+	Team = mongoose.model('Team', TeamSchema);// Se encarga de hacer la relacion entre el mapeo que acabamos de definir con TeamSchema = new Shema({}); con el nombre de la variable Team 
 
 module.exports = Team;

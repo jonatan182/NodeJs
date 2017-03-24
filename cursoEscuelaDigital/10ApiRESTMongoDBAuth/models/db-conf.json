@@ -1,6 +1,6 @@
 {
 	"mongo" : {
-		"host" : "localhost",
+		"host" : "192.168.99.100:27017/admin",
 		"db" : "indentation_war"
 	}
 }

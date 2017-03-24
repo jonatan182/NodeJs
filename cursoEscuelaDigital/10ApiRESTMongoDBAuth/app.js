@@ -13,7 +13,7 @@ const express = require('express'),
 	publicDir = express.static(`${__dirname}/public`),
 	viewDir = `${__dirname}/views`,
 	optSession = { secret:'ssshhhhh', saveUninitialized: true, resave: true },
-	port = (process.env.PORT || 3000);
+	port = (process.env.PORT || 3001);
 
 let app = express();
 
@@ -29,7 +29,7 @@ app
 	.use( publicDir )
 	.use( favicon )
 	.use( morgan('dev') )
-	
+
 	.use( auth )
 	.use( routes )
 	.use( errors.http404 );
