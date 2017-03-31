@@ -18,6 +18,6 @@ Clock.prototype.theTime = function () {
 
 let cucu = new Clock();//creamos un objeto Clock
 
-cucu.on('tictac', () => {
+cucu.on('tictac', () => {//clock tiene el evento tictac 
 	cucu.theTime();
 });

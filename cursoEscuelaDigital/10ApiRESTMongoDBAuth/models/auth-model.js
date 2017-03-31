@@ -15,6 +15,7 @@ class AuthModel {
 	}
 
 	setUser(user, cb) {
+		console.log("Se Registra: "+user.username+" "+user.password);
 		conn.create(user, (err) => {
 			if(err) throw err;
 			cb();

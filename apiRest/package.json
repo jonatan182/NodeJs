@@ -1,10 +1,13 @@
 {
+  "_comment": "Forma De Colocar Un Comentario En JSON",
+  "-comment2": "nodemon index.js Para llamar a nodemon para no tener que parar y arrancar el servidor cada vez que hagamos un cambio, es similar a supervisor, en este caso vamos a utilizar supervisor ya que por la version que tenemos de node js nos saldra error al utilizar nodemon",
+  "-comment3": "nodemon: ^1.11.0 //libreria que nos va a permitir que cada vez que hagamos un cambio NO tengamos que parar el servidor  y iniciarlo, Simplemente basta con guardarlo 'crtl + s' y se subiran los cambios al servidor",
   "name": "api-rest",
   "version": "1.0.0",
   "description": "Proyecto de API RESTful con Node.js y Express",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js", //Para llamar a nodemon para no tener que parar y arrancar el servidor cada vez que hagamos un cambio
+    "start": "supervisor index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonatan Velandia",
@@ -14,6 +17,6 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0" //libreria que nos va a permitir que cada vez que hagamos un cambio NO tengamos que parar el servidor  y iniciarlo, Simplemente basta con guardarlo "crtl + s" y se subiran los cambios al servidor
+    "supervisor": "^0.11.0"
   }
 }
