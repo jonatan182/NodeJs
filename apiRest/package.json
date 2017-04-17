@@ -4,7 +4,7 @@
   "-comment3": "nodemon: ^1.11.0 //libreria que nos va a permitir que cada vez que hagamos un cambio NO tengamos que parar el servidor  y iniciarlo, Simplemente basta con guardarlo 'crtl + s' y se subiran los cambios al servidor",
   "name": "api-rest",
   "version": "1.0.0",
-  "description": "Proyecto de API RESTful con Node.js y Express",
+  "description": "Proyecto de API RESTfull con Node.js y Express",
   "main": "index.js",
   "scripts": {
     "start": "supervisor index.js",

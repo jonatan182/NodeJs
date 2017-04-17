@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')//Para importar La libreria body-parser
 
 //creamos nuestro servidor
 const app = express()
-const port = process.env.PORT || 2002  //process.env.PORT Es Una Variable De Entorno, si no hay nada allí, la constante tomara el valor de 3000
+const port = process.env.PORT || 2002  //process.env.PORT Es Una Variable De Entorno, si no hay nada allí, la constante tomara el valor de 2002
 
 //añadimos los midleware que creamos al app de express
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -17,6 +17,36 @@ app.get('/saludo', (req, res)=>{//El primer parametro es el patch "url", el segu
 	res.end();
 });
 
+//Peticion get con parametros
+app.get('/saludo/:name', (req, res)=>{//req.params: Para Ingresar A los Parametros get, que son los que que vienen en la url
+	res.send({ message: `Buenos Dias: ${req.params.name}!`}); //imprimimos en formato json un mensaje, con la concatenacion del parametro name
+});
+
+app.post('/ingresar', (req, res)=>{//req.body: Para Ingresar A los Parametros post, que son los que que vienen en el cuerpo de la peticion http
+	res.send({message: `${req.body.name}`});
+});
+
+//**************************************************Aplicacion Crud  EJemplo********************************************************//
+app.get('/api/product', (req, res)=>{
+
+});
+
+app.get('/api/product/:productId', (req, res)=>{
+
+});
+
+app.post('/api/product', (req, res)=>{
+
+});
+
+app.put('/api/product/:productId', (req, res)=>{
+
+});
+
+app.delete('/api/product/:productId', (req, res)=>{
+
+});
+
 app.listen(port, ()=>{
 	console.log(`API REST corriendo en http://localhost:${port}`)
-})
+});
